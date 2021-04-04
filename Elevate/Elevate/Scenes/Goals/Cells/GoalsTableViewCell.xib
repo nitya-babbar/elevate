@@ -65,7 +65,7 @@
                 <outlet property="checkButton" destination="nKZ-ao-nOz" id="DAR-dE-Bza"/>
                 <outlet property="dailyTextView" destination="b86-tz-BgG" id="bAS-bZ-Tyi"/>
             </connections>
-            <point key="canvasLocation" x="68" y="-35"/>
+            <point key="canvasLocation" x="180" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>

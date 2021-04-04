@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		033468C0261647C100E4CA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033468BE261647C100E4CA37 /* LaunchScreen.storyboard */; };
 		033468D526164AD000E4CA37 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033468D326164AD000E4CA37 /* GoalsViewController.swift */; };
 		033468D626164AD000E4CA37 /* GoalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033468D426164AD000E4CA37 /* GoalsViewController.xib */; };
+		0379FB482617E51000088F42 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FB472617E51000088F42 /* Video.swift */; };
 		2EFE292D2616C8AC00FE56AD /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */; };
 		2EFE292E2616C8AC00FE56AD /* GoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */; };
 		42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */; };
@@ -28,6 +29,7 @@
 		42356F622617CB76006AC759 /* MeditationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F612617CB76006AC759 /* MeditationViewController.xib */; };
 		42356F662617CB8D006AC759 /* VideosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F642617CB8D006AC759 /* VideosCollectionViewCell.xib */; };
 		42356F672617CB8D006AC759 /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F652617CB8D006AC759 /* VideosCollectionViewCell.swift */; };
+		B535378C867DA871313363ED /* Pods_Elevate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CCCC5138DA3EAFAC6F4B6 /* Pods_Elevate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		033468C1261647C100E4CA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033468D326164AD000E4CA37 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		033468D426164AD000E4CA37 /* GoalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsViewController.xib; sourceTree = "<group>"; };
+		0379FB472617E51000088F42 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsTableViewCell.xib; sourceTree = "<group>"; };
 		42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermGoalsViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		42356F612617CB76006AC759 /* MeditationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeditationViewController.xib; sourceTree = "<group>"; };
 		42356F642617CB8D006AC759 /* VideosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosCollectionViewCell.xib; sourceTree = "<group>"; };
 		42356F652617CB8D006AC759 /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
+		505CCCC5138DA3EAFAC6F4B6 /* Pods_Elevate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elevate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEDC0BB42E42ADB0E3BC74DB /* Pods-Elevate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate.debug.xcconfig"; path = "Target Support Files/Pods-Elevate/Pods-Elevate.debug.xcconfig"; sourceTree = "<group>"; };
+		F6A5F20291E7160E19ABEA7C /* Pods-Elevate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate.release.xcconfig"; path = "Target Support Files/Pods-Elevate/Pods-Elevate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B535378C867DA871313363ED /* Pods_Elevate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +77,11 @@
 		033468A7261647C000E4CA37 = {
 			isa = PBXGroup;
 			children = (
+				0379FB472617E51000088F42 /* Video.swift */,
 				033468B2261647C000E4CA37 /* Elevate */,
 				033468B1261647C000E4CA37 /* Products */,
+				E9E2BC9A56D4BCB6B259A3C6 /* Pods */,
+				9FF3861FBBBD787726441086 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +123,8 @@
 			children = (
 				42356F4B2617A77C006AC759 /* Cells */,
 				42356F4426167120006AC759 /* CopingViewController.swift */,
+				42356F4C2617A7FD006AC759 /* CopingTableViewController.swift */,
+				42356F4D2617A7FD006AC759 /* CopingTableViewController.xib */,
 				42356F4526167120006AC759 /* CopingViewController.xib */,
 				42356F5E2617CB6E006AC759 /* MeditationViewController.swift */,
 				42356F612617CB76006AC759 /* MeditationViewController.xib */,
@@ -146,10 +158,25 @@
 			children = (
 				42356F652617CB8D006AC759 /* VideosCollectionViewCell.swift */,
 				42356F642617CB8D006AC759 /* VideosCollectionViewCell.xib */,
-				42356F4C2617A7FD006AC759 /* CopingTableViewController.swift */,
-				42356F4D2617A7FD006AC759 /* CopingTableViewController.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9FF3861FBBBD787726441086 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				505CCCC5138DA3EAFAC6F4B6 /* Pods_Elevate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9E2BC9A56D4BCB6B259A3C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC0BB42E42ADB0E3BC74DB /* Pods-Elevate.debug.xcconfig */,
+				F6A5F20291E7160E19ABEA7C /* Pods-Elevate.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 033468C4261647C100E4CA37 /* Build configuration list for PBXNativeTarget "Elevate" */;
 			buildPhases = (
+				775881A89348EACBA01ACA47 /* [CP] Check Pods Manifest.lock */,
 				033468AC261647C000E4CA37 /* Sources */,
 				033468AD261647C000E4CA37 /* Frameworks */,
 				033468AE261647C000E4CA37 /* Resources */,
+				108A31290BEC340BB85EFA4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,12 +253,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		108A31290BEC340BB85EFA4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		775881A89348EACBA01ACA47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elevate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		033468AC261647C000E4CA37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */,
+				0379FB482617E51000088F42 /* Video.swift in Sources */,
 				42356F4E2617A7FD006AC759 /* CopingTableViewController.swift in Sources */,
 				42356F5F2617CB6E006AC759 /* MeditationViewController.swift in Sources */,
 				42356F672617CB8D006AC759 /* VideosCollectionViewCell.swift in Sources */,
@@ -383,6 +455,7 @@
 		};
 		033468C5261647C100E4CA37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEDC0BB42E42ADB0E3BC74DB /* Pods-Elevate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,6 +474,7 @@
 		};
 		033468C6261647C100E4CA37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6A5F20291E7160E19ABEA7C /* Pods-Elevate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -39,7 +39,6 @@ class GoalsTableViewCell: UITableViewCell, UITextViewDelegate {
         dailyTextView.delegate = self
         checkButton.isSelected = model.done ?? false
         self.index = index
-        
     }
     
     @IBAction func checkAction(sender: UIButton) {
@@ -51,6 +50,4 @@ class GoalsTableViewCell: UITableViewCell, UITextViewDelegate {
             delegate?.dailyGoalChanged(value: textView.text, index: index)
         }
     }
-    
-    
 }

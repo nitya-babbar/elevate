@@ -39,7 +39,7 @@ fileprivate extension TabBarViewController {
 
     func addViewControllers() {
         
-        viewControllers = [goalViewController(), goalViewController(), goalViewController()]
+        viewControllers = [goalViewController(), copingViewController(), goalViewController()]
         
     }
     
@@ -52,4 +52,12 @@ fileprivate extension TabBarViewController {
         return goalsNavigation
     }
     
+    func copingViewController() -> UIViewController {
+        let copingViewController = MeditationViewController()
+        let copingNavigation = UINavigationController(rootViewController: copingViewController)
+        copingViewController.tabBarItem?.title = NSLocalizedString("Coping", comment: "")
+        copingViewController.tabBarItem?.image = UIImage(systemName: "heart")
+        copingViewController.tabBarItem?.selectedImage = UIImage(systemName: "heart.fill")
+        return copingNavigation
+    }
 }

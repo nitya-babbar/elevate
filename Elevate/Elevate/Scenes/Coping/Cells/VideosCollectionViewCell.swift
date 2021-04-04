@@ -7,6 +7,21 @@
 
 import UIKit
 
-class VideosCollectionViewCell {
-    let video = Video(videoTitle: "", picture: "")
+protocol VideosCollectionViewDelegate {}
+
+class VideosCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var picture: UIImage!
+    @IBOutlet weak var button: UIButton!
+    
+    var delegate: VideosCollectionViewDelegate?
+        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    func setValues(model: Video) {
+        label.text = model.videoTitle ?? ""
+    }
 }

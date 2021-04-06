@@ -28,6 +28,7 @@
 		2EFE29A5261BFE7600FE56AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE29A1261BFE7600FE56AD /* SignInViewController.swift */; };
 		2EFE29AA261C023700FE56AD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE29A8261C023700FE56AD /* AboutViewController.swift */; };
 		2EFE29AB261C023700FE56AD /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29A9261C023700FE56AD /* AboutViewController.xib */; };
+		2EFE29BC261C0E9700FE56AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */; };
 		42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */; };
 		42356F4126166756006AC759 /* LongTermGoalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */; };
 		42356F4626167120006AC759 /* CopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F4426167120006AC759 /* CopingViewController.swift */; };
@@ -62,6 +63,7 @@
 		2EFE29A1261BFE7600FE56AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2EFE29A8261C023700FE56AD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2EFE29A9261C023700FE56AD /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermGoalsViewController.swift; sourceTree = "<group>"; };
 		42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongTermGoalsViewController.xib; sourceTree = "<group>"; };
 		42356F4426167120006AC759 /* CopingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopingViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				033468BC261647C100E4CA37 /* Assets.xcassets */,
 				033468BE261647C100E4CA37 /* LaunchScreen.storyboard */,
 				033468C1261647C100E4CA37 /* Info.plist */,
+				2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */,
 			);
 			path = Elevate;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				033468BB261647C000E4CA37 /* Main.storyboard in Resources */,
 				03F8F72B261A7C9C00234739 /* VideosCollectionViewCell.xib in Resources */,
 				033468D626164AD000E4CA37 /* GoalsViewController.xib in Resources */,
+				2EFE29BC261C0E9700FE56AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

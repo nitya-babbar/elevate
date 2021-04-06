@@ -1,5 +1,5 @@
 //
-//  MeditationViewController.swift
+//  CopingSkillsViewController.swift
 //  Elevate
 //
 //  Created by Nitya Babbar on 4/2/21.
@@ -7,14 +7,13 @@
 
 import UIKit
 
-class MeditationViewController: UIViewController {
+class CopingSkillsViewController: UIViewController {
     @IBOutlet weak var videosCollectionView: UICollectionView!
     
     var videosModel = [Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Meditation"
         configureCollectionView()
     }
     
@@ -25,7 +24,7 @@ class MeditationViewController: UIViewController {
     }
 }
 
-extension MeditationViewController: UICollectionViewDelegate, UICollectionViewDataSource, VideosCollectionViewDelegate {
+extension CopingSkillsViewController: UICollectionViewDelegate, UICollectionViewDataSource, VideosCollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         videosModel.count
     }
@@ -42,7 +41,7 @@ extension MeditationViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-extension MeditationViewController: UICollectionViewDelegateFlowLayout {
+extension CopingSkillsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
    
             let width = (collectionView.bounds.width / 2) - 10

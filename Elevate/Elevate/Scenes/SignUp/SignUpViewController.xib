@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Elevate" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="W01-gU-31W" id="4hh-8l-h6r"/>
+                <outlet property="passwordConfirmTextField" destination="F5v-71-ij6" id="qQx-wq-OYQ"/>
+                <outlet property="passwordTextField" destination="HvX-0h-2Sl" id="ms6-pA-AnG"/>
+                <outlet property="signUpButton" destination="geh-J1-wMs" id="Tzd-GT-ATl"/>
+                <outlet property="view" destination="COG-Ba-Y4X" id="0Cf-Jc-Nlq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="COG-Ba-Y4X">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geh-J1-wMs">
+                    <rect key="frame" x="19" y="597" width="337.5" height="50"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.94117647059999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="CAw-gC-e1g"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="signUpAction:" destination="-1" eventType="touchUpInside" id="RhW-tj-Kfx"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-pB-HBh">
+                    <rect key="frame" x="117.5" y="20" width="140" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="XGW-hA-rvs"/>
+                        <constraint firstAttribute="width" secondItem="Zf8-pB-HBh" secondAttribute="height" multiplier="1:1" id="cNe-zP-Cqh"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4RW-e2-tBf">
+                    <rect key="frame" x="19" y="262.5" width="337.5" height="142"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W01-gU-31W">
+                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-0h-2Sl">
+                            <rect key="frame" x="0.0" y="54" width="337.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5v-71-ij6">
+                            <rect key="frame" x="0.0" y="108" width="337.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="aVb-Pv-Dbv"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="geh-J1-wMs" firstAttribute="width" secondItem="4RW-e2-tBf" secondAttribute="width" id="BAq-xm-i6x"/>
+                <constraint firstItem="geh-J1-wMs" firstAttribute="centerX" secondItem="aVb-Pv-Dbv" secondAttribute="centerX" id="Iug-wz-MSz"/>
+                <constraint firstItem="Zf8-pB-HBh" firstAttribute="top" secondItem="aVb-Pv-Dbv" secondAttribute="top" constant="20" id="Lj6-sT-g5j"/>
+                <constraint firstItem="aVb-Pv-Dbv" firstAttribute="bottom" secondItem="geh-J1-wMs" secondAttribute="bottom" constant="20" id="QXd-OK-lm8"/>
+                <constraint firstItem="4RW-e2-tBf" firstAttribute="width" secondItem="COG-Ba-Y4X" secondAttribute="width" multiplier="0.9" id="SOe-ho-lBF"/>
+                <constraint firstItem="4RW-e2-tBf" firstAttribute="centerX" secondItem="COG-Ba-Y4X" secondAttribute="centerX" id="amp-od-E1Y"/>
+                <constraint firstItem="Zf8-pB-HBh" firstAttribute="centerX" secondItem="COG-Ba-Y4X" secondAttribute="centerX" id="dmI-jt-ycD"/>
+                <constraint firstItem="4RW-e2-tBf" firstAttribute="centerY" secondItem="COG-Ba-Y4X" secondAttribute="centerY" id="ur6-1c-fV6"/>
+            </constraints>
+            <point key="canvasLocation" x="-13" y="104"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Image" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

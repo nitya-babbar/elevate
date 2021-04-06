@@ -7,27 +7,65 @@
 
 import UIKit
 
+class General {
+    
+    var image: String?
+    var name: String?
+    
+    init(image: String?, name: String?) {
+        self.image = image
+        self.name = name
+    }
+    
+}
+
 class CopingViewController: UIViewController {
 
-    // You need to create the tableview
-    // you need to add the didSelect delegate for the tableview
-    // you need to perform a push to the copingSkillsView (the one with the collection)
+    @IBOutlet weak var copingTableView: UITableView!
+    
+    var copingModel = [General(image: "leaf", name: "Meditaion"), General(image: "wind", name: "Yoga"), General(image: "lungs", name: "Breathing"), General(image: "headphones", name: "Soothing sounds")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Coping"
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        copingTableView.delegate = self
+        copingTableView.dataSource = self
+        copingTableView.register(UINib(nibName: "GeneralTableViewCell", bundle: nil), forCellReuseIdentifier: "GeneralTableViewCell")
     }
 
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: TableViewDataSource
+extension CopingViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        copingModel.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralTableViewCell", for: indexPath) as? GeneralTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.setValues(model: copingModel[indexPath.row])
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = CopingSkillsViewController()
+        nextVC.title = copingModel[indexPath.row].name ?? ""
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }

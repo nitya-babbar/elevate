@@ -31,6 +31,8 @@ class GoalsTableViewCell: UITableViewCell, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
+
     }
     
     func setValues(model: Goal, index: Int) {

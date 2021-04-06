@@ -19,6 +19,7 @@ class VideosCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
     
     func setValues(model: Video) {

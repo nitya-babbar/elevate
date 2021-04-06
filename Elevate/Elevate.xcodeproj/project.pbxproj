@@ -24,8 +24,6 @@
 		42356F4126166756006AC759 /* LongTermGoalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */; };
 		42356F4626167120006AC759 /* CopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F4426167120006AC759 /* CopingViewController.swift */; };
 		42356F4726167120006AC759 /* CopingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F4526167120006AC759 /* CopingViewController.xib */; };
-		42356F4E2617A7FD006AC759 /* CopingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F4C2617A7FD006AC759 /* CopingTableViewController.swift */; };
-		42356F4F2617A7FD006AC759 /* CopingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F4D2617A7FD006AC759 /* CopingTableViewController.xib */; };
 		42356F5C2617B331006AC759 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F5B2617B331006AC759 /* TabBarViewController.swift */; };
 		42356F5F2617CB6E006AC759 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F5E2617CB6E006AC759 /* MeditationViewController.swift */; };
 		42356F622617CB76006AC759 /* MeditationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F612617CB76006AC759 /* MeditationViewController.xib */; };
@@ -52,8 +50,6 @@
 		42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongTermGoalsViewController.xib; sourceTree = "<group>"; };
 		42356F4426167120006AC759 /* CopingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopingViewController.swift; sourceTree = "<group>"; };
 		42356F4526167120006AC759 /* CopingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CopingViewController.xib; sourceTree = "<group>"; };
-		42356F4C2617A7FD006AC759 /* CopingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopingTableViewController.swift; sourceTree = "<group>"; };
-		42356F4D2617A7FD006AC759 /* CopingTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CopingTableViewController.xib; sourceTree = "<group>"; };
 		42356F5B2617B331006AC759 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		42356F5E2617CB6E006AC759 /* MeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		42356F612617CB76006AC759 /* MeditationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeditationViewController.xib; sourceTree = "<group>"; };
@@ -123,8 +119,6 @@
 			children = (
 				42356F4B2617A77C006AC759 /* Cells */,
 				42356F4426167120006AC759 /* CopingViewController.swift */,
-				42356F4C2617A7FD006AC759 /* CopingTableViewController.swift */,
-				42356F4D2617A7FD006AC759 /* CopingTableViewController.xib */,
 				42356F4526167120006AC759 /* CopingViewController.xib */,
 				42356F5E2617CB6E006AC759 /* MeditationViewController.swift */,
 				42356F612617CB76006AC759 /* MeditationViewController.xib */,
@@ -244,7 +238,6 @@
 				42356F4126166756006AC759 /* LongTermGoalsViewController.xib in Resources */,
 				033468C0261647C100E4CA37 /* LaunchScreen.storyboard in Resources */,
 				033468BD261647C100E4CA37 /* Assets.xcassets in Resources */,
-				42356F4F2617A7FD006AC759 /* CopingTableViewController.xib in Resources */,
 				033468BB261647C000E4CA37 /* Main.storyboard in Resources */,
 				03F8F72B261A7C9C00234739 /* VideosCollectionViewCell.xib in Resources */,
 				033468D626164AD000E4CA37 /* GoalsViewController.xib in Resources */,
@@ -303,7 +296,6 @@
 				42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */,
 				03F8F72A261A7C9C00234739 /* VideosCollectionViewCell.swift in Sources */,
 				0379FB482617E51000088F42 /* Video.swift in Sources */,
-				42356F4E2617A7FD006AC759 /* CopingTableViewController.swift in Sources */,
 				42356F5F2617CB6E006AC759 /* MeditationViewController.swift in Sources */,
 				033468B8261647C000E4CA37 /* ViewController.swift in Sources */,
 				033468B4261647C000E4CA37 /* AppDelegate.swift in Sources */,

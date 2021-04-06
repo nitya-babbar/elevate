@@ -10,7 +10,7 @@ import UIKit
 class MeditationViewController: UIViewController {
     @IBOutlet weak var videosCollectionView: UICollectionView!
     
-    var videosModel = [Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU")]
+    var videosModel = [Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +39,15 @@ extension MeditationViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.delegate = self
         
         return cell
+    }
+}
+
+extension MeditationViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+   
+            let width = (collectionView.bounds.width / 2) - 10
+            let height = (width)
+           
+        return CGSize(width: width, height: height)
     }
 }

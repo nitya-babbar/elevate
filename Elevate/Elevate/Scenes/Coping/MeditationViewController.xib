@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1zT-9w-bI6">
-                    <rect key="frame" x="87" y="370" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1zT-9w-bI6">
+                    <rect key="frame" x="20" y="64" width="374" height="778"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fAT-cn-SXj">
                         <size key="itemSize" width="128" height="128"/>
@@ -33,6 +32,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1zT-9w-bI6" secondAttribute="trailing" constant="20" id="2Hg-0D-F58"/>
+                <constraint firstItem="1zT-9w-bI6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="BZS-wg-MIv"/>
+                <constraint firstItem="1zT-9w-bI6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dUA-ce-sU6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1zT-9w-bI6" secondAttribute="bottom" constant="20" id="ocd-LJ-Pk0"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="85"/>
         </view>
     </objects>

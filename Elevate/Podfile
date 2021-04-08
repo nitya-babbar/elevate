@@ -8,5 +8,6 @@ target 'Elevate' do
   # Pods for Elevate
 
   pod 'Firebase/Auth'
+  pod 'FSCalendar'
 
 end

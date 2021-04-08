@@ -18,6 +18,10 @@
 		0379FB482617E51000088F42 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379FB472617E51000088F42 /* Video.swift */; };
 		03F8F72A261A7C9C00234739 /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F8F728261A7C9C00234739 /* VideosCollectionViewCell.swift */; };
 		03F8F72B261A7C9C00234739 /* VideosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F8F729261A7C9C00234739 /* VideosCollectionViewCell.xib */; };
+		2EA4A397261E5E130067FC3B /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4A395261E5E130067FC3B /* TrackerViewController.swift */; };
+		2EA4A398261E5E130067FC3B /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4A396261E5E130067FC3B /* TrackerViewController.xib */; };
+		2EA4A39D261E88030067FC3B /* DayTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4A39B261E88030067FC3B /* DayTrackViewController.swift */; };
+		2EA4A39E261E88030067FC3B /* DayTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4A39C261E88030067FC3B /* DayTrackViewController.xib */; };
 		2EFE292D2616C8AC00FE56AD /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */; };
 		2EFE292E2616C8AC00FE56AD /* GoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */; };
 		2EFE2997261BF90200FE56AD /* GeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE2995261BF90200FE56AD /* GeneralTableViewCell.swift */; };
@@ -53,6 +57,10 @@
 		0379FB472617E51000088F42 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		03F8F728261A7C9C00234739 /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		03F8F729261A7C9C00234739 /* VideosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosCollectionViewCell.xib; sourceTree = "<group>"; };
+		2EA4A395261E5E130067FC3B /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		2EA4A396261E5E130067FC3B /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
+		2EA4A39B261E88030067FC3B /* DayTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTrackViewController.swift; sourceTree = "<group>"; };
+		2EA4A39C261E88030067FC3B /* DayTrackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayTrackViewController.xib; sourceTree = "<group>"; };
 		2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsTableViewCell.xib; sourceTree = "<group>"; };
 		2EFE2995261BF90200FE56AD /* GeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,9 +131,21 @@
 			path = Elevate;
 			sourceTree = "<group>";
 		};
+		2EA4A394261E5DD10067FC3B /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				2EA4A395261E5E130067FC3B /* TrackerViewController.swift */,
+				2EA4A396261E5E130067FC3B /* TrackerViewController.xib */,
+				2EA4A39B261E88030067FC3B /* DayTrackViewController.swift */,
+				2EA4A39C261E88030067FC3B /* DayTrackViewController.xib */,
+			);
+			path = Tracker;
+			sourceTree = "<group>";
+		};
 		2EFE29252616C5C600FE56AD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2EA4A394261E5DD10067FC3B /* Tracker */,
 				2EFE29A7261C021E00FE56AD /* About */,
 				2EFE299F261BFE7600FE56AD /* SignIn */,
 				2EFE299C261BFE7600FE56AD /* SignUp */,
@@ -292,9 +312,11 @@
 				2EFE29AB261C023700FE56AD /* AboutViewController.xib in Resources */,
 				2EFE29A3261BFE7600FE56AD /* SignUpViewController.xib in Resources */,
 				2EFE2998261BF90200FE56AD /* GeneralTableViewCell.xib in Resources */,
+				2EA4A398261E5E130067FC3B /* TrackerViewController.xib in Resources */,
 				033468BD261647C100E4CA37 /* Assets.xcassets in Resources */,
 				033468BB261647C000E4CA37 /* Main.storyboard in Resources */,
 				03F8F72B261A7C9C00234739 /* VideosCollectionViewCell.xib in Resources */,
+				2EA4A39E261E88030067FC3B /* DayTrackViewController.xib in Resources */,
 				033468D626164AD000E4CA37 /* GoalsViewController.xib in Resources */,
 				2EFE29BC261C0E9700FE56AD /* GoogleService-Info.plist in Resources */,
 			);
@@ -350,9 +372,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EFE29A5261BFE7600FE56AD /* SignInViewController.swift in Sources */,
+				2EA4A397261E5E130067FC3B /* TrackerViewController.swift in Sources */,
 				42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */,
 				03F8F72A261A7C9C00234739 /* VideosCollectionViewCell.swift in Sources */,
 				2EFE29AA261C023700FE56AD /* AboutViewController.swift in Sources */,
+				2EA4A39D261E88030067FC3B /* DayTrackViewController.swift in Sources */,
 				0379FB482617E51000088F42 /* Video.swift in Sources */,
 				2EFE2997261BF90200FE56AD /* GeneralTableViewCell.swift in Sources */,
 				42356F5F2617CB6E006AC759 /* CopingSkillsViewController.swift in Sources */,

@@ -36,8 +36,6 @@ class CopingViewController: UIViewController {
         copingTableView.dataSource = self
         copingTableView.register(UINib(nibName: "GeneralTableViewCell", bundle: nil), forCellReuseIdentifier: "GeneralTableViewCell")
     }
-
-
 }
 
 // MARK: TableViewDataSource

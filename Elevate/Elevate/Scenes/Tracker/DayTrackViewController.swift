@@ -13,15 +13,15 @@ enum Mood: Int {
     func color() -> UIColor {
         switch self {
         case .verySad:
-            return .systemRed
+            return UIColor(red: 255, green: 0, blue: 0, alpha: 1)
         case .sad:
-            return .systemOrange
+            return UIColor(red: 255, green: 102, blue: 102, alpha: 1)
         case .normal:
             return .systemYellow
         case .happy:
-            return UIColor(red: 0, green: 249, blue: 0, alpha: 1)
+            return UIColor(red: 102, green: 255, blue: 102, alpha: 1)
         case .veryHappy:
-            return .systemGreen
+            return UIColor(red: 0, green: 255, blue: 0, alpha: 1)
         }
     }
 }

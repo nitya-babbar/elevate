@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="width" constant="50" id="Wc4-rz-gI9"/>
                                 <constraint firstAttribute="width" secondItem="hOM-H6-Pfq" secondAttribute="height" multiplier="1:1" id="tM5-ju-hpn"/>
                             </constraints>
-                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" backgroundImage="smiley" catalog="system"/>
                             <state key="selected" backgroundImage="smiley.fill" catalog="system"/>
                             <connections>
@@ -46,7 +46,7 @@
                                 <constraint firstAttribute="width" constant="50" id="l7d-E6-pFv"/>
                                 <constraint firstAttribute="width" secondItem="ZKN-dq-Tp8" secondAttribute="height" multiplier="1:1" id="pMy-ty-cri"/>
                             </constraints>
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" backgroundImage="smiley" catalog="system"/>
                             <state key="selected" backgroundImage="smiley.fill" catalog="system"/>
                             <connections>
@@ -72,7 +72,7 @@
                                 <constraint firstAttribute="width" secondItem="BAv-nS-vYm" secondAttribute="height" multiplier="1:1" id="2Xi-0k-Rvm"/>
                                 <constraint firstAttribute="width" constant="50" id="dsx-FV-GGA"/>
                             </constraints>
-                            <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40000000000000002" green="1" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" backgroundImage="smiley" catalog="system"/>
                             <state key="selected" backgroundImage="smiley.fill" catalog="system"/>
                             <connections>
@@ -85,7 +85,7 @@
                                 <constraint firstAttribute="width" secondItem="HU1-fw-dxs" secondAttribute="height" multiplier="1:1" id="Ad0-Cp-nj5"/>
                                 <constraint firstAttribute="width" constant="50" id="ZWp-zP-AWm"/>
                             </constraints>
-                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" backgroundImage="smiley" catalog="system"/>
                             <state key="selected" backgroundImage="smiley.fill" catalog="system"/>
                             <connections>
@@ -168,15 +168,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

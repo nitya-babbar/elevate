@@ -24,6 +24,7 @@
 		2EA4A398261E5E130067FC3B /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4A396261E5E130067FC3B /* TrackerViewController.xib */; };
 		2EA4A39D261E88030067FC3B /* DayTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4A39B261E88030067FC3B /* DayTrackViewController.swift */; };
 		2EA4A39E261E88030067FC3B /* DayTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4A39C261E88030067FC3B /* DayTrackViewController.xib */; };
+		2EA4A3C8262289BE0067FC3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4A3C7262289BE0067FC3B /* User.swift */; };
 		2EFE292D2616C8AC00FE56AD /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */; };
 		2EFE292E2616C8AC00FE56AD /* GoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */; };
 		2EFE2997261BF90200FE56AD /* GeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE2995261BF90200FE56AD /* GeneralTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		2EA4A396261E5E130067FC3B /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
 		2EA4A39B261E88030067FC3B /* DayTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTrackViewController.swift; sourceTree = "<group>"; };
 		2EA4A39C261E88030067FC3B /* DayTrackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayTrackViewController.xib; sourceTree = "<group>"; };
+		2EA4A3C7262289BE0067FC3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2EFE292B2616C8AC00FE56AD /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		2EFE292C2616C8AC00FE56AD /* GoalsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsTableViewCell.xib; sourceTree = "<group>"; };
 		2EFE2995261BF90200FE56AD /* GeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				033468BE261647C100E4CA37 /* LaunchScreen.storyboard */,
 				033468C1261647C100E4CA37 /* Info.plist */,
 				2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */,
+				2EA4A3C7262289BE0067FC3B /* User.swift */,
 			);
 			path = Elevate;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				03F8F74A262116A100234739 /* CopyViewController.swift in Sources */,
 				2EFE29A2261BFE7600FE56AD /* SignUpViewController.swift in Sources */,
 				42356F4626167120006AC759 /* CopingViewController.swift in Sources */,
+				2EA4A3C8262289BE0067FC3B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

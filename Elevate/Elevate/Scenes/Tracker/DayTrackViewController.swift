@@ -9,6 +9,21 @@ import UIKit
 
 enum Mood: Int {
     case verySad, sad, normal, happy, veryHappy
+    
+    func color() -> UIColor {
+        switch self {
+        case .verySad:
+            return .systemRed
+        case .sad:
+            return .systemOrange
+        case .normal:
+            return .systemYellow
+        case .happy:
+            return UIColor(red: 0, green: 249, blue: 0, alpha: 1)
+        case .veryHappy:
+            return .systemGreen
+        }
+    }
 }
 
 class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -17,7 +32,6 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var picker: UITextField!
     let thePicker = UIPickerView()
     let myPickerData = [String](arrayLiteral: "1 Hour", "2 Hours", "3 Hours", "4 Hours", "5 Hours", "6 Hours", "7 Hours", "8 Hours", "9 Hours", "10 Hours", "11 Hours", "12 Hours", "13 Hours", "14 Hours", "15 Hours", "16 Hours", "17 Hours", "18 Hours", "19 Hours", "20 Hours")
-    let colors: [UIColor] = [.systemRed, .systemOrange, .systemYellow, UIColor(red: 0, green: 249, blue: 0, alpha: 1), .systemGreen]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +53,9 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             
             if i == mood.rawValue {
                 smileyButtons[i].isSelected = true
-                smileyButtons[i].tintColor = colors[mood.rawValue]
+                smileyButtons[i].tintColor = mood.color()
             } else {
                 smileyButtons[i].isSelected = false
-                smileyButtons[i].tintColor = colors[i]
             }
             
             

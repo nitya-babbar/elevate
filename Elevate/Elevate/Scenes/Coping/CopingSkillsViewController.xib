@@ -29,23 +29,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="170-sC-c8P" customClass="FSCalendar" customModule="Elevate" customModuleProvider="target">
-                    <rect key="frame" x="20" y="44" width="374" height="300"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="drY-48-eJT"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1zT-9w-bI6" secondAttribute="trailing" constant="20" id="2Hg-0D-F58"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="170-sC-c8P" secondAttribute="trailing" constant="20" id="5kt-kA-gIV"/>
                 <constraint firstItem="1zT-9w-bI6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="BZS-wg-MIv"/>
-                <constraint firstItem="170-sC-c8P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Oj4-VH-46v"/>
                 <constraint firstItem="1zT-9w-bI6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dUA-ce-sU6"/>
-                <constraint firstItem="170-sC-c8P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nMM-XG-Hmk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1zT-9w-bI6" secondAttribute="bottom" constant="20" id="ocd-LJ-Pk0"/>
             </constraints>
             <point key="canvasLocation" x="139" y="85"/>

@@ -10,5 +10,6 @@ target 'Elevate' do
   pod 'Firebase/Auth'
   pod 'FSCalendar'
   pod 'IQKeyboardManagerSwift'
+  pod 'YouTubePlayer'
 
 end

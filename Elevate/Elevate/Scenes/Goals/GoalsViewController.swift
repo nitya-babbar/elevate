@@ -18,8 +18,8 @@ class GoalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Goals"
         configureTableView()
+        configureNavigationBar(title: "Goals")
     }
     
     @IBAction func longTermsGoal(_ sender: UIButton) {

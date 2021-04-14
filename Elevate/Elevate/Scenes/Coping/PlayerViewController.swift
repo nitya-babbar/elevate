@@ -1,18 +1,23 @@
 //
-//  CopyViewController.swift
+//  PlayerViewController.swift
 //  Elevate
 //
-//  Created by Nitya Babbar on 4/9/21.
+//  Created by Rhonny Gonzalez on 4/13/21.
 //
 
 import UIKit
+import YouTubePlayer
 
-class CopyViewController: UIViewController {
+class PlayerViewController: UIViewController {
 
+    @IBOutlet weak var player: YouTubePlayerView!
+    var url: URL!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        player.loadVideoURL(url)
+        player.delegate = self
     }
 
 
@@ -26,4 +31,12 @@ class CopyViewController: UIViewController {
     }
     */
 
+}
+
+extension PlayerViewController: YouTubePlayerDelegate {
+    
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        player.play()
+    }
+    
 }

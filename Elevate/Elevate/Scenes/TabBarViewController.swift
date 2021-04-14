@@ -56,8 +56,8 @@ fileprivate extension TabBarViewController {
         let copingViewController = CopingViewController()
         let copingNavigation = UINavigationController(rootViewController: copingViewController)
         copingViewController.tabBarItem?.title = NSLocalizedString("Coping", comment: "")
-        copingViewController.tabBarItem?.image = UIImage(systemName: "heart")
-        copingViewController.tabBarItem?.selectedImage = UIImage(systemName: "heart.fill")
+        copingViewController.tabBarItem?.image = UIImage(systemName: "heart.circle")
+        copingViewController.tabBarItem?.selectedImage = UIImage(systemName: "heart.circle.fill")
         return copingNavigation
     }
     

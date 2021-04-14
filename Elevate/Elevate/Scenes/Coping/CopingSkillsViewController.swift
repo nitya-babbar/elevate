@@ -39,6 +39,14 @@ extension CopingSkillsViewController: UICollectionViewDelegate, UICollectionView
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let urlString = videosModel[indexPath.row].url, let url = URL(string: urlString) {
+            let playerVC = PlayerViewController()
+            playerVC.url = url
+            navigationController?.pushViewController(playerVC, animated: true)
+        }
+    }
 }
 
 extension CopingSkillsViewController: UICollectionViewDelegateFlowLayout {

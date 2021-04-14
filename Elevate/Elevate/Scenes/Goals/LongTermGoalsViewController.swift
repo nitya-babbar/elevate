@@ -18,7 +18,7 @@ class LongTermGoalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Long Terms Goals"
+        configureNavigationBar(title: "Long Terms Goals")
         configureTableView()
     }
     // This function works to goback a presented viewController with modal option

@@ -26,34 +26,43 @@ enum Mood: Int {
     }
 }
 
+protocol DayTrackDelegate: class {
+    func updatedSelectedMood(newMood: Mood)
+}
+
 class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var smileyButtons: [UIButton]!
     @IBOutlet weak var picker: UITextField!
     let thePicker = UIPickerView()
+    weak var delegate: DayTrackDelegate?
+    var selectedMood: Mood!
     let myPickerData = [String](arrayLiteral: "1 Hour", "2 Hours", "3 Hours", "4 Hours", "5 Hours", "6 Hours", "7 Hours", "8 Hours", "9 Hours", "10 Hours", "11 Hours", "12 Hours", "13 Hours", "14 Hours", "15 Hours", "16 Hours", "17 Hours", "18 Hours", "19 Hours", "20 Hours")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if selectedMood != nil {
+            smileyButtons[selectedMood.rawValue].isSelected = true
+            smileyButtons[selectedMood.rawValue].tintColor = selectedMood.color()
+        }
         picker.inputView = thePicker
         thePicker.delegate = self
     }
     
     
     @IBAction func selectMood(_ sender: UIButton) {
-        
-        moodColoring(Mood(rawValue: sender.tag) ?? .normal)
-        
+        selectedMood = Mood(rawValue: sender.tag) ?? .normal
+        moodColoring()
+        delegate?.updatedSelectedMood(newMood: selectedMood)
     }
     
-    func moodColoring(_ mood: Mood) {
+    func moodColoring() {
         
         for i in 0 ..< 5 {
             
-            if i == mood.rawValue {
+            if i == selectedMood.rawValue {
                 smileyButtons[i].isSelected = true
-                smileyButtons[i].tintColor = mood.color()
+                smileyButtons[i].tintColor = selectedMood.color()
             } else {
                 smileyButtons[i].isSelected = false
             }

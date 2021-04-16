@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func configureNavigationBar(title: String?, showPhone: Bool = true, showMessage: Bool = true) {
+    func configureNavigationBar(title: String?, showPhone: Bool = true, showMessage: Bool = false) {
         self.title = title
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
@@ -25,7 +25,7 @@ extension UIViewController {
         
         if showPhone {
             let search = UIBarButtonItem(image: UIImage(systemName: "phone"), style: .plain, target: self, action: #selector(emergencyCall))
-            search.imageInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+//            search.imageInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
             items.append(search)
         }
         
@@ -38,6 +38,13 @@ extension UIViewController {
     
     @objc func sendMessage() {
         print("Send message")
+    }
+    
+    func showAlert(with title: String?, message: String?) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true, completion: nil)
     }
     
 }

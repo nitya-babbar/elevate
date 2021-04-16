@@ -27,33 +27,72 @@ enum Mood: Int {
 }
 
 protocol DayTrackDelegate: class {
-    func updatedSelectedMood(newMood: Mood)
+    func updatedDayTrack(dayTrack: DayTrack)
 }
 
 class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var smileyButtons: [UIButton]!
+    @IBOutlet weak var journalTextView: UITextView!
     @IBOutlet weak var picker: UITextField!
     let thePicker = UIPickerView()
     weak var delegate: DayTrackDelegate?
+    var dayTrack: DayTrack!
     var selectedMood: Mood!
     let myPickerData = [String](arrayLiteral: "1 Hour", "2 Hours", "3 Hours", "4 Hours", "5 Hours", "6 Hours", "7 Hours", "8 Hours", "9 Hours", "10 Hours", "11 Hours", "12 Hours", "13 Hours", "14 Hours", "15 Hours", "16 Hours", "17 Hours", "18 Hours", "19 Hours", "20 Hours")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if selectedMood != nil {
+        configureNavigationBar(title: title)
+        addCustomBack()
+        if dayTrack != nil {
             smileyButtons[selectedMood.rawValue].isSelected = true
             smileyButtons[selectedMood.rawValue].tintColor = selectedMood.color()
+            journalTextView.text = dayTrack.journal ?? ""
+            picker.text = dayTrack.sleep ?? ""
         }
         picker.inputView = thePicker
         thePicker.delegate = self
+    }
+    
+    func addCustomBack() {
+        
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(checkIfCanGoBack))
+        self.navigationItem.leftBarButtonItem = backButton
+
+    }
+    
+    @objc func checkIfCanGoBack() {
+        if selectedMood == nil {
+            goBack()
+            return
+        }
+        let newDayTrack = DayTrack(mood: self.selectedMood, journal: self.journalTextView.text, sleep: self.picker.text)
+        if dayTrack != newDayTrack {
+            let alert = UIAlertController(title: "Hey!", message: "Do you want to save your changes?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Save", style: .default) {_ in
+                self.delegate?.updatedDayTrack(dayTrack: newDayTrack)
+                self.goBack()
+            })
+            alert.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                self.goBack()
+            })
+            present(alert, animated: true, completion: nil)
+        } else {
+            goBack()
+        }
+        
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func selectMood(_ sender: UIButton) {
         selectedMood = Mood(rawValue: sender.tag) ?? .normal
         moodColoring()
-        delegate?.updatedSelectedMood(newMood: selectedMood)
+        
     }
     
     func moodColoring() {

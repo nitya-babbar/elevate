@@ -8,6 +8,7 @@ target 'Elevate' do
   # Pods for Elevate
 
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'FSCalendar'
   pod 'IQKeyboardManagerSwift'
   pod 'YouTubePlayer'

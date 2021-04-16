@@ -7,29 +7,47 @@
 
 import UIKit
 import FSCalendar
+import FirebaseAuth
+import FirebaseFirestore
+
+class DayTrack: Equatable {
+    
+    var mood: Mood
+    var journal: String?
+    var sleep: String?
+    
+    init(mood: Mood, journal: String?, sleep: String?) {
+        self.mood = mood
+        self.journal = journal
+        self.sleep = sleep
+    }
+    
+    static func ==(lhs: DayTrack, rhs: DayTrack) -> Bool {
+        return lhs.mood == rhs.mood && lhs.journal == rhs.journal && lhs.sleep == rhs.sleep
+    }
+}
+
+
 
 class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
     
     @IBOutlet weak var calendar: FSCalendar!
-    var dates: [String: Mood] = ["04/04/2021": Mood.verySad, "04/05/2021": Mood.sad, "04/06/2021": Mood.normal, "04/07/2021": Mood.happy, "04/08/2021": Mood.veryHappy]
+    var dates: [String: DayTrack] = [:]
     var selectedDate = Date()
     var shouldSelectNewOne = false
+    var uid: String?
     
     fileprivate lazy var dateFormatter1: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "MM-dd-yyyy"
         return formatter
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Tracker"
+        configureNavigationBar(title: "Tracker")
         calendar.allowsMultipleSelection = true
-        for date in dates.keys {
-            if let dateFormatted = dateFormatter1.date(from: date), dateFormatted <= calendar.maximumDate {
-                calendar.select(dateFormatter1.date(from: date))
-            }
-        }
+        checkUserTracker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,14 +58,55 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         }
     }
     
+    func checkUserTracker() {
+        if let user = Auth.auth().currentUser {
+            uid = user.uid
+            retrieveUserDayTrack()
+        } else {
+            //TODO: Add a send to login Logics
+        }
+    }
+    
+    func retrieveUserDayTrack() {
+        let db = Firestore.firestore()
+        let doc = db.document("users/\(uid ?? "")").collection("tracker")
+        doc.getDocuments { (snapshot, error) in
+            if error != nil {
+                print("there was an error")
+            }
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    if let mood = document["mood"] as? Int {
+                        let journal = document["journal"] as? String
+                        let sleep = document["sleep"] as? String
+                        self.dates[document.documentID] = DayTrack(mood: Mood(rawValue: mood) ?? .normal, journal: journal, sleep: sleep)
+                        self.selectARetrievedDate(date: document.documentID)
+                    }
+                }
+            }
+            self.calendar.reloadData()
+        }
+    }
+    
+    func saveUserDayTrack(key: String, dayTrack: DayTrack) {
+        let db = Firestore.firestore()
+        db.document("users/\(uid ?? "")").collection("tracker").document(key).setData(["mood": dayTrack.mood.rawValue,"journal": dayTrack.journal ?? "", "sleep": dayTrack.sleep ?? ""])
+    }
+    
+    func selectARetrievedDate(date: String) {
+        if let dateFormatted = dateFormatter1.date(from: date), dateFormatted <= calendar.maximumDate {
+            calendar.select(dateFormatter1.date(from: date))
+        }
+    }
+    
     func maximumDate(for calendar: FSCalendar) -> Date {
         Date()
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
         let key = dateFormatter1.string(from: date)
-        if let mood = dates[key] {
-            return mood.color()
+        if let dayTrack = dates[key] {
+            return dayTrack.mood.color()
         }
         return .blue
     }
@@ -58,6 +117,10 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        if uid == nil {
+            showAlert(with: "Hey!", message: "You must sign in to use this feature")
+            return false
+        }
         goToDate(date)
         return false
     }
@@ -69,8 +132,9 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         let dayTrackVC = DayTrackViewController()
         dayTrackVC.title = formatter1.string(from: date)
         let key = dateFormatter1.string(from: date)
-        if let mood = dates[key] {
-            dayTrackVC.selectedMood = mood
+        if let dayTrack = dates[key] {
+            dayTrackVC.dayTrack = dayTrack
+            dayTrackVC.selectedMood = dayTrack.mood
         }
         dayTrackVC.delegate = self
         navigationController?.pushViewController(dayTrackVC, animated: true)
@@ -90,10 +154,11 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
 }
 
 extension TrackerViewController: DayTrackDelegate {
-    func updatedSelectedMood(newMood: Mood) {
+    func updatedDayTrack(dayTrack: DayTrack) {
         calendar.select(selectedDate)
         let date = dateFormatter1.string(from: selectedDate)
-        dates[date] = newMood
+        dates[date] = dayTrack
+        saveUserDayTrack(key: date, dayTrack: dayTrack)
         shouldSelectNewOne = true
     }
 }

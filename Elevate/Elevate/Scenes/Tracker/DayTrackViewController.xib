@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DayTrackViewController" customModule="Elevate" customModuleProvider="target">
             <connections>
+                <outlet property="journalTextView" destination="TlC-gq-Tkc" id="GmV-Yx-4fb"/>
                 <outlet property="picker" destination="pmy-vZ-OLJ" id="ny2-FE-uRf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="OR2-iP-85W"/>
                 <outletCollection property="smileyButtons" destination="hOM-H6-Pfq" collectionClass="NSMutableArray" id="6vd-Qf-aYB"/>
@@ -25,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-Lf-epE">
-                    <rect key="frame" x="62.5" y="50.5" width="250" height="50"/>
+                    <rect key="frame" x="62.5" y="40.5" width="250" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-H6-Pfq">
                             <rect key="frame" x="0.0" y="0.5" width="50" height="49"/>
@@ -101,19 +102,19 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aZ-mV-1so">
-                    <rect key="frame" x="164.5" y="20" width="46" height="20.5"/>
+                    <rect key="frame" x="164.5" y="10" width="46" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBY-1p-Bny">
-                    <rect key="frame" x="157" y="130.5" width="61.5" height="20.5"/>
+                    <rect key="frame" x="157" y="120.5" width="61.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TlC-gq-Tkc">
-                    <rect key="frame" x="62.5" y="161" width="250" height="150"/>
+                    <rect key="frame" x="62.5" y="151" width="250" height="150"/>
                     <color key="backgroundColor" red="1" green="0.96078431610000004" blue="0.76862752440000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="g7e-CN-Mm9"/>
@@ -124,13 +125,13 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bc-pK-rb8">
-                    <rect key="frame" x="164.5" y="341" width="46" height="20.5"/>
+                    <rect key="frame" x="164.5" y="331" width="46" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmy-vZ-OLJ">
-                    <rect key="frame" x="137.5" y="371.5" width="100" height="40"/>
+                    <rect key="frame" x="137.5" y="361.5" width="100" height="40"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="msG-em-VKb"/>
@@ -155,7 +156,7 @@
                 <constraint firstItem="kBY-1p-Bny" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dPb-wf-NPB"/>
                 <constraint firstItem="3aZ-mV-1so" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="exx-e0-x4M"/>
                 <constraint firstItem="VfK-Lf-epE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fhc-E7-qdI"/>
-                <constraint firstItem="3aZ-mV-1so" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="fji-Kl-Br1"/>
+                <constraint firstItem="3aZ-mV-1so" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="fji-Kl-Br1"/>
             </constraints>
             <point key="canvasLocation" x="28" y="68.815592203898049"/>
         </view>

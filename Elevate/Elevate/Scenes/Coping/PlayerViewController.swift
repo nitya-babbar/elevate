@@ -15,7 +15,7 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         player.loadVideoURL(url)
         player.delegate = self
     }

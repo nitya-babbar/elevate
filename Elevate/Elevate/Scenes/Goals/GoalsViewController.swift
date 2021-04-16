@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class GoalsViewController: UIViewController {
     
     @IBOutlet weak var longTermButton: UIButton!
@@ -19,6 +19,25 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+//        let db = Firestore.firestore()
+//        let dict: [String: Any] = ["Meditation": [["name": "video1","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video2","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video3","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video4","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video5","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video6","url":"www.youtube.com", "thumbnail": "youtubethumbail"]],
+//                                   "Yoga": [["name": "video1","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video2","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video3","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video4","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video5","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video6","url":"www.youtube.com", "thumbnail": "youtubethumbail"]],
+//                                   "Breathing": [["name": "video1","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video2","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video3","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video4","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video5","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video6","url":"www.youtube.com", "thumbnail": "youtubethumbail"]],
+//                                   "Soothing sounds": [["name": "video1","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video2","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video3","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video4","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video5","url":"www.youtube.com", "thumbnail": "youtubethumbail"], ["name": "video6","url":"www.youtube.com", "thumbnail": "youtubethumbail"]]]
+//        db.collection("coping").document("skills").setData(dict)
+        let db = Firestore.firestore()
+//        db.collection("users").document("zcqsla1HyHMmiltuIqpQSPPSBxJ2").collection("goals").document("longTermGoals").setData(["longTermGoals": [["description": "Learn a Piano song", "check": false], ["description": "Sing like Taylor Swift", "check": false], ["description": "Register in Dancing Lessons", "check": false]]])
+        
+        let doc = db.document("users/zcqsla1HyHMmiltuIqpQSPPSBxJ2").collection("tracker")
+        doc.getDocuments { (snapshot, error) in
+            if error != nil {
+                print("there was an error")
+            }
+            if let snapshot = snapshot {
+                dump(snapshot)
+            }
+        }
+        
         configureNavigationBar(title: "Goals")
     }
     

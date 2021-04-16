@@ -19,21 +19,13 @@ class SignInViewController: UIViewController {
         title = "Sign In"
     }
     
-    func showAlert(with title: String?, message: String?) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func signInAction(_ sender: UIButton) {
         
         Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
             if let error = error {
                 self.showAlert(with: "Error", message: error.localizedDescription)
             }
-            dump(authResult)
-            self.showAlert(with: "Success", message: "User Created")
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

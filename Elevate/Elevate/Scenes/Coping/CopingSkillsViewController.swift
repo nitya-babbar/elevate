@@ -14,6 +14,7 @@ class CopingSkillsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar(title: title)
         configureCollectionView()
     }
     

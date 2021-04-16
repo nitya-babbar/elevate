@@ -27,7 +27,7 @@ class CopingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Coping"
+        configureNavigationBar(title: "Coping")
         configureTableView()
     }
     

@@ -64,7 +64,7 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="O18-Wd-o2p">
-                    <rect key="frame" x="117.5" y="20" width="140" height="140"/>
+                    <rect key="frame" x="117.5" y="10" width="140" height="140"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="O18-Wd-o2p" secondAttribute="height" multiplier="1:1" id="GXb-cC-Iww"/>
                         <constraint firstAttribute="width" constant="140" id="Kb4-Gz-UVt"/>
@@ -89,7 +89,7 @@
                 <constraint firstItem="AXy-OA-eBf" firstAttribute="top" secondItem="VAa-V5-1KT" secondAttribute="bottom" constant="5" id="CXY-BO-8fn"/>
                 <constraint firstItem="6kb-RJ-JBG" firstAttribute="width" secondItem="IQH-bZ-ypN" secondAttribute="width" id="IGj-Fh-ORt"/>
                 <constraint firstItem="VAa-V5-1KT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="P3N-pK-cZY"/>
-                <constraint firstItem="O18-Wd-o2p" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="YpY-qM-6FZ"/>
+                <constraint firstItem="O18-Wd-o2p" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="YpY-qM-6FZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6kb-RJ-JBG" secondAttribute="bottom" constant="40" id="gpg-aY-doG"/>
                 <constraint firstItem="VAa-V5-1KT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iJB-Bp-Fdk"/>
                 <constraint firstItem="zjf-3A-A6N" firstAttribute="top" secondItem="6kb-RJ-JBG" secondAttribute="bottom" constant="5" id="ldV-t9-fVT"/>

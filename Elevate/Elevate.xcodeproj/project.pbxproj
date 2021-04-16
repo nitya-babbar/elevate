@@ -36,8 +36,8 @@
 		2EFE29A3261BFE7600FE56AD /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE299E261BFE7600FE56AD /* SignUpViewController.xib */; };
 		2EFE29A4261BFE7600FE56AD /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29A0261BFE7600FE56AD /* SignInViewController.xib */; };
 		2EFE29A5261BFE7600FE56AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE29A1261BFE7600FE56AD /* SignInViewController.swift */; };
-		2EFE29AA261C023700FE56AD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE29A8261C023700FE56AD /* AboutViewController.swift */; };
-		2EFE29AB261C023700FE56AD /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29A9261C023700FE56AD /* AboutViewController.xib */; };
+		2EFE29AA261C023700FE56AD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE29A8261C023700FE56AD /* SettingsViewController.swift */; };
+		2EFE29AB261C023700FE56AD /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29A9261C023700FE56AD /* SettingsViewController.xib */; };
 		2EFE29BC261C0E9700FE56AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */; };
 		42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */; };
 		42356F4126166756006AC759 /* LongTermGoalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */; };
@@ -81,8 +81,8 @@
 		2EFE299E261BFE7600FE56AD /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		2EFE29A0261BFE7600FE56AD /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		2EFE29A1261BFE7600FE56AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		2EFE29A8261C023700FE56AD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		2EFE29A9261C023700FE56AD /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		2EFE29A8261C023700FE56AD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2EFE29A9261C023700FE56AD /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		2EFE29BB261C0E9700FE56AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42356F3E26166756006AC759 /* LongTermGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermGoalsViewController.swift; sourceTree = "<group>"; };
 		42356F3F26166756006AC759 /* LongTermGoalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongTermGoalsViewController.xib; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		2EFE29A7261C021E00FE56AD /* About */ = {
 			isa = PBXGroup;
 			children = (
-				2EFE29A8261C023700FE56AD /* AboutViewController.swift */,
-				2EFE29A9261C023700FE56AD /* AboutViewController.xib */,
+				2EFE29A8261C023700FE56AD /* SettingsViewController.swift */,
+				2EFE29A9261C023700FE56AD /* SettingsViewController.xib */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				42356F4126166756006AC759 /* LongTermGoalsViewController.xib in Resources */,
 				2EFE29A4261BFE7600FE56AD /* SignInViewController.xib in Resources */,
 				033468C0261647C100E4CA37 /* LaunchScreen.storyboard in Resources */,
-				2EFE29AB261C023700FE56AD /* AboutViewController.xib in Resources */,
+				2EFE29AB261C023700FE56AD /* SettingsViewController.xib in Resources */,
 				2EFE29A3261BFE7600FE56AD /* SignUpViewController.xib in Resources */,
 				2EFE2998261BF90200FE56AD /* GeneralTableViewCell.xib in Resources */,
 				03F8F74B262116A100234739 /* CopyViewController.xib in Resources */,
@@ -411,7 +411,7 @@
 				2EA4A397261E5E130067FC3B /* TrackerViewController.swift in Sources */,
 				42356F4026166756006AC759 /* LongTermGoalsViewController.swift in Sources */,
 				03F8F72A261A7C9C00234739 /* VideosCollectionViewCell.swift in Sources */,
-				2EFE29AA261C023700FE56AD /* AboutViewController.swift in Sources */,
+				2EFE29AA261C023700FE56AD /* SettingsViewController.swift in Sources */,
 				2EA4A39D261E88030067FC3B /* DayTrackViewController.swift in Sources */,
 				2EE07CD426252CD8001F0AEB /* CustomTextView.swift in Sources */,
 				0379FB482617E51000088F42 /* Video.swift in Sources */,
@@ -576,15 +576,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZ9Z7WDLZ9;
 				INFOPLIST_FILE = Elevate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Elevate.Elevate;
+				PRODUCT_BUNDLE_IDENTIFIER = Elevatetest.Elevate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -595,15 +597,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZ9Z7WDLZ9;
 				INFOPLIST_FILE = Elevate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Elevate.Elevate;
+				PRODUCT_BUNDLE_IDENTIFIER = Elevatetest.Elevate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

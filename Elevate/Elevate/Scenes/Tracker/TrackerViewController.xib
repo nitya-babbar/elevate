@@ -20,11 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3El-b0-ota" customClass="FSCalendar">
-                    <rect key="frame" x="20" y="20" width="335" height="300"/>
+                    <rect key="frame" x="20" y="10" width="335" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="CpC-0U-scT"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" red="0.72156862749999995" green="0.94117647059999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hej-2X-vZV"/>
                         <outlet property="delegate" destination="-1" id="231-2C-ZjP"/>
@@ -36,7 +41,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3El-b0-ota" secondAttribute="trailing" constant="20" id="1e5-bH-1e8"/>
                 <constraint firstItem="3El-b0-ota" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4wH-f0-y4z"/>
-                <constraint firstItem="3El-b0-ota" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="VOm-Z1-eGp"/>
+                <constraint firstItem="3El-b0-ota" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="VOm-Z1-eGp"/>
             </constraints>
             <point key="canvasLocation" x="28" y="69"/>
         </view>

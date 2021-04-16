@@ -39,7 +39,7 @@ fileprivate extension TabBarViewController {
 
     func addViewControllers() {
         
-        viewControllers = [goalViewController(), copingViewController(), trackerViewController(), aboutViewController()]
+        viewControllers = [goalViewController(), copingViewController(), trackerViewController(), settingsViewController()]
         
     }
     
@@ -70,10 +70,10 @@ fileprivate extension TabBarViewController {
         return copingNavigation
     }
     
-    func aboutViewController() -> UIViewController {
-        let copingViewController = AboutViewController()
+    func settingsViewController() -> UIViewController {
+        let copingViewController = SettingsViewController()
         let copingNavigation = UINavigationController(rootViewController: copingViewController)
-        copingViewController.tabBarItem?.title = NSLocalizedString("About", comment: "")
+        copingViewController.tabBarItem?.title = NSLocalizedString("Settings", comment: "")
         copingViewController.tabBarItem?.image = UIImage(systemName: "gearshape")
         copingViewController.tabBarItem?.selectedImage = UIImage(systemName: "gearshape.fill")
         return copingNavigation

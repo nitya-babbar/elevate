@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Elevate" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="W01-gU-31W" id="4hh-8l-h6r"/>
+                <outlet property="firstnameTextField" destination="c8E-o2-HbW" id="rZA-Dt-0y3"/>
+                <outlet property="lastnameTextField" destination="QL9-HP-xFh" id="Gvu-El-Kh4"/>
                 <outlet property="passwordConfirmTextField" destination="F5v-71-ij6" id="qQx-wq-OYQ"/>
                 <outlet property="passwordTextField" destination="HvX-0h-2Sl" id="ms6-pA-AnG"/>
                 <outlet property="signUpButton" destination="geh-J1-wMs" id="Tzd-GT-ATl"/>
@@ -42,27 +44,37 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-pB-HBh">
-                    <rect key="frame" x="117.5" y="20" width="140" height="140"/>
+                    <rect key="frame" x="117.5" y="10" width="140" height="140"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="XGW-hA-rvs"/>
                         <constraint firstAttribute="width" secondItem="Zf8-pB-HBh" secondAttribute="height" multiplier="1:1" id="cNe-zP-Cqh"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4RW-e2-tBf">
-                    <rect key="frame" x="19" y="262.5" width="337.5" height="142"/>
+                    <rect key="frame" x="19" y="208.5" width="337.5" height="250"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W01-gU-31W">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8E-o2-HbW">
                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QL9-HP-xFh">
+                            <rect key="frame" x="0.0" y="54" width="337.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W01-gU-31W">
+                            <rect key="frame" x="0.0" y="108" width="337.5" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" textContentType="email"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-0h-2Sl">
-                            <rect key="frame" x="0.0" y="54" width="337.5" height="34"/>
+                            <rect key="frame" x="0.0" y="162" width="337.5" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5v-71-ij6">
-                            <rect key="frame" x="0.0" y="108" width="337.5" height="34"/>
+                            <rect key="frame" x="0.0" y="216" width="337.5" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
@@ -74,7 +86,7 @@
             <constraints>
                 <constraint firstItem="geh-J1-wMs" firstAttribute="width" secondItem="4RW-e2-tBf" secondAttribute="width" id="BAq-xm-i6x"/>
                 <constraint firstItem="geh-J1-wMs" firstAttribute="centerX" secondItem="aVb-Pv-Dbv" secondAttribute="centerX" id="Iug-wz-MSz"/>
-                <constraint firstItem="Zf8-pB-HBh" firstAttribute="top" secondItem="aVb-Pv-Dbv" secondAttribute="top" constant="20" id="Lj6-sT-g5j"/>
+                <constraint firstItem="Zf8-pB-HBh" firstAttribute="top" secondItem="aVb-Pv-Dbv" secondAttribute="top" constant="10" id="Lj6-sT-g5j"/>
                 <constraint firstItem="aVb-Pv-Dbv" firstAttribute="bottom" secondItem="geh-J1-wMs" secondAttribute="bottom" constant="20" id="QXd-OK-lm8"/>
                 <constraint firstItem="4RW-e2-tBf" firstAttribute="width" secondItem="COG-Ba-Y4X" secondAttribute="width" multiplier="0.9" id="SOe-ho-lBF"/>
                 <constraint firstItem="4RW-e2-tBf" firstAttribute="centerX" secondItem="COG-Ba-Y4X" secondAttribute="centerX" id="amp-od-E1Y"/>

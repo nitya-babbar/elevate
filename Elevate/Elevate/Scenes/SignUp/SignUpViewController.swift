@@ -7,10 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
-//    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
@@ -42,9 +44,17 @@ class SignUpViewController: UIViewController {
 
     func isValidForm() -> (isValid: Bool, message: String)  {
         
-//        if usernameTextField.text?.count ?? 0 < 4 {
-//            return (false, "username should have more than 3 characters")
-//        }
+        if firstnameTextField.text?.count ?? 0 < 1 {
+            return (false, "Firstname should not be empty")
+        }
+        
+        if lastnameTextField.text?.count ?? 0 < 1 {
+            return (false, "Lastname should not be empty")
+        }
+        
+        if !(emailTextField?.text?.isValidEmail() ?? false) {
+            return (false, "The email should be a valid email")
+        }
         
         if passwordTextField.text != passwordConfirmTextField.text {
             return (false, "Password confirmation should match with your password field")
@@ -53,26 +63,25 @@ class SignUpViewController: UIViewController {
         return (true, "")
     }
     
-    func showAlert(with title: String?, message: String?) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alert, animated: true, completion: nil)
-    }
-
-    
     @IBAction func signUpAction(_ sender: UIButton) {
         
         let validForm = isValidForm()
-        Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
-            if let error = error {
-                self.showAlert(with: "Error", message: error.localizedDescription)
-            }
-            dump(authResult)
-            self.showAlert(with: "Success", message: "User Created")
-        }
+        
         if validForm.isValid {
-            
+            Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
+                if let error = error {
+                    self.showAlert(with: "Error", message: error.localizedDescription)
+                    return
+                }
+                if let uid = authResult?.user.uid {
+                    let db = Firestore.firestore()
+                    db.collection("users").document(uid).setData(["firstname": self.firstnameTextField?.text ?? "", "lastname": self.lastnameTextField?.text ?? "", "email": self.emailTextField?.text ?? "", "uid": uid])
+                    self.navigationController?.popToRootViewController(animated: true)
+
+                    //db.collection("users").document("9ugfFDcDFgSxV9kBWPYsVU0Qx4k1").collection("tracker").document("daytrack").setData(["04/10/2021":["mood": 4,"journal":"Today was a great day just hanging out with friends", "sleep": "8 hours"]])//setData(["firstname": "Rhonny", "lastname": "Gonzalez", "uid": uid])
+                }
+                
+            }
         } else {
             showAlert(with: "Error", message: validForm.message)
         }
@@ -90,11 +99,6 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if textField == emailTextField, !(emailTextField.text ?? "").isValidEmail() {
-            textField.becomeFirstResponder()
-            showAlert(with: "Error", message: "This is not a valid Email")
-        }
         
         if emailTextField.text != "" && passwordTextField.text != "" && passwordConfirmTextField.text != "" {
             enableSignUpButton()

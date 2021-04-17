@@ -304,6 +304,7 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
   - YouTubePlayer (0.7.2)
 
@@ -312,6 +313,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FSCalendar
   - IQKeyboardManagerSwift
+  - PKHUD
   - YouTubePlayer
 
 SPEC REPOS:
@@ -332,6 +334,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
+    - PKHUD
     - PromisesObjC
     - YouTubePlayer
 
@@ -352,9 +355,10 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 47ad775818f86e31196de4f54a104ca218f986ea
+PODFILE CHECKSUM: d04bda43b221809644dcd2042c3c2d4fd8ba0cc0
 
 COCOAPODS: 1.10.1

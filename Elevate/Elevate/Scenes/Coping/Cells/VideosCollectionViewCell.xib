@@ -20,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWL-JV-Frr">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3M-FE-Umj">
-                                <rect key="frame" x="8" y="89.5" width="184" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3M-FE-Umj">
+                                <rect key="frame" x="8" y="20" width="184" height="160"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,8 +30,10 @@
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="y3M-FE-Umj" firstAttribute="centerY" secondItem="JWL-JV-Frr" secondAttribute="centerY" id="EsF-2G-0Zg"/>
+                            <constraint firstItem="y3M-FE-Umj" firstAttribute="top" secondItem="JWL-JV-Frr" secondAttribute="top" constant="20" id="FhP-Vv-8r7"/>
                             <constraint firstAttribute="trailing" secondItem="y3M-FE-Umj" secondAttribute="trailing" constant="8" id="TdX-Px-xQk"/>
                             <constraint firstItem="y3M-FE-Umj" firstAttribute="leading" secondItem="JWL-JV-Frr" secondAttribute="leading" constant="8" id="mo4-ww-XFt"/>
+                            <constraint firstAttribute="bottom" secondItem="y3M-FE-Umj" secondAttribute="bottom" constant="20" id="zBg-wW-qpR"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,6 +47,7 @@
             </constraints>
             <size key="customSize" width="200" height="200"/>
             <connections>
+                <outlet property="bgView" destination="JWL-JV-Frr" id="pud-aE-d9I"/>
                 <outlet property="label" destination="y3M-FE-Umj" id="6z6-Rm-fM6"/>
             </connections>
             <point key="canvasLocation" x="246.37681159420291" y="134.59821428571428"/>

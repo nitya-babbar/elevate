@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import PKHUD
 
 class SignInViewController: UIViewController {
 
@@ -20,12 +21,16 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
-        
+        HUD.show(.progress)
         Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
             if let error = error {
+                HUD.flash(.error)
                 self.showAlert(with: "Error", message: error.localizedDescription)
             }
-            self.navigationController?.popToRootViewController(animated: true)
+            DispatchQueue.main.async {
+                HUD.flash(.success)
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
     }
     

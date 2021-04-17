@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol CustomTextViewDelegate: class {
+    func customTextViewDidChange(_ textView: UITextView)
+}
+
 @IBDesignable
-class CustomTextView: UITextView {
+class CustomTextView: UITextView, UITextViewDelegate {
+    
+    weak var customDelegate: CustomTextViewDelegate?
     
     @IBInspectable public var placeholder: String = "" {
         didSet {
@@ -21,5 +27,33 @@ class CustomTextView: UITextView {
             self.textColor = placeholderColor
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.delegate = self
+        if self.text == placeholder {
+            self.textColor = placeholderColor
+        }
+        
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        if self.text != placeholder && self.textColor != placeholderColor {
+            customDelegate?.customTextViewDidChange(textView)
+        }
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if self.text == placeholder && self.textColor == placeholderColor {
+            self.text = nil
+            self.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if self.text.trimmingCharacters(in: .whitespaces).isEmpty {
+            self.text = placeholder
+            self.textColor = placeholderColor
+        }
+    }
+    
     
 }

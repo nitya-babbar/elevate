@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import PKHUD
 
 class SignUpViewController: UIViewController {
 
@@ -68,15 +69,20 @@ class SignUpViewController: UIViewController {
         let validForm = isValidForm()
         
         if validForm.isValid {
+            HUD.show(.progress)
             Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
                 if let error = error {
+                    HUD.flash(.error)
                     self.showAlert(with: "Error", message: error.localizedDescription)
                     return
                 }
                 if let uid = authResult?.user.uid {
                     let db = Firestore.firestore()
                     db.collection("users").document(uid).setData(["firstname": self.firstnameTextField?.text ?? "", "lastname": self.lastnameTextField?.text ?? "", "email": self.emailTextField?.text ?? "", "uid": uid])
-                    self.navigationController?.popToRootViewController(animated: true)
+                    DispatchQueue.main.async {
+                        HUD.flash(.success)
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
 
                     //db.collection("users").document("9ugfFDcDFgSxV9kBWPYsVU0Qx4k1").collection("tracker").document("daytrack").setData(["04/10/2021":["mood": 4,"journal":"Today was a great day just hanging out with friends", "sleep": "8 hours"]])//setData(["firstname": "Rhonny", "lastname": "Gonzalez", "uid": uid])
                 }

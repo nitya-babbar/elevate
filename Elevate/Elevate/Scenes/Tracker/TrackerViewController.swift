@@ -9,6 +9,7 @@ import UIKit
 import FSCalendar
 import FirebaseAuth
 import FirebaseFirestore
+import PKHUD
 
 class DayTrack: Equatable {
     
@@ -61,6 +62,7 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     func checkUserTracker() {
         if let user = Auth.auth().currentUser {
             uid = user.uid
+            HUD.show(.progress)
             retrieveUserDayTrack()
         } else {
             //TODO: Add a send to login Logics
@@ -72,6 +74,7 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         let doc = db.document("users/\(uid ?? "")").collection("tracker")
         doc.getDocuments { (snapshot, error) in
             if error != nil {
+                HUD.show(.error)
                 print("there was an error")
             }
             if let snapshot = snapshot {
@@ -84,7 +87,10 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                     }
                 }
             }
-            self.calendar.reloadData()
+            DispatchQueue.main.async {
+                HUD.flash(.success)
+                self.calendar.reloadData()
+            }
         }
     }
     

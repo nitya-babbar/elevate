@@ -9,12 +9,12 @@ import Foundation
 
 class Video {
     var videoTitle: String?
-    var picture: String?
+    var thumbnail: String?
     var url: String?
     
-    init(videoTitle: String?, picture: String?, url: String?) {
+    init(videoTitle: String?, thumbnail: String?, url: String?) {
         self.videoTitle = videoTitle
-        self.picture = picture
+        self.thumbnail = thumbnail
         self.url = url
     }
 }

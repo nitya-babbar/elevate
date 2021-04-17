@@ -10,7 +10,7 @@ import UIKit
 class CopingSkillsViewController: UIViewController {
     @IBOutlet weak var videosCollectionView: UICollectionView!
     
-    var videosModel = [Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 1", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 2", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 3", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU"), Video(videoTitle: "Video 4", picture: "highlands", url: "https://www.youtube.com/watch?v=ZToicYcHIOU")]
+    var videosModel: [Video] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,15 @@ extension CopingSkillsViewController: UICollectionViewDelegate, UICollectionView
         }
         
         cell.setValues(model: videosModel[indexPath.row])
+        cell.bgView.backgroundColor = coloring(index: indexPath.row)
         cell.delegate = self
         
         return cell
+    }
+    
+    func coloring(index: Int) -> UIColor {
+        
+        return .blue
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

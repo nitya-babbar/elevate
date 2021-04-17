@@ -43,6 +43,10 @@
                         <action selector="longTermsGoal:" destination="-1" eventType="touchUpInside" id="NBb-S9-oZa"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-yb-9Fd">
+                    <rect key="frame" x="8" y="152" width="304" height="416"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
                 <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hXw-sd-shO">
                     <rect key="frame" x="23" y="10" width="274" height="50"/>
                     <subviews>
@@ -58,10 +62,6 @@
                         </imageView>
                     </subviews>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-yb-9Fd">
-                    <rect key="frame" x="8" y="152" width="304" height="416"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -84,7 +84,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ra2-yb-9Fd" secondAttribute="trailing" constant="8" id="oAT-6t-2QO"/>
                 <constraint firstItem="hXw-sd-shO" firstAttribute="width" secondItem="ojs-Fe-Mfs" secondAttribute="width" multiplier="0.9" id="s5l-wI-zkE"/>
             </constraints>
-            <point key="canvasLocation" x="-39.200000000000003" y="90.404797601199405"/>
+            <point key="canvasLocation" x="-39.375" y="89.788732394366193"/>
         </view>
     </objects>
     <resources>

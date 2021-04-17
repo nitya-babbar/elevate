@@ -12,5 +12,6 @@ target 'Elevate' do
   pod 'FSCalendar'
   pod 'IQKeyboardManagerSwift'
   pod 'YouTubePlayer'
+  pod 'PKHUD'
 
 end

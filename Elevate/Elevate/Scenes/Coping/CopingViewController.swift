@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import PKHUD
 
 class General {
     
@@ -23,12 +25,44 @@ class CopingViewController: UIViewController {
 
     @IBOutlet weak var copingTableView: UITableView!
     
-    var copingModel = [General(image: "leaf", name: "Meditaion"), General(image: "wind", name: "Yoga"), General(image: "lungs", name: "Breathing"), General(image: "headphones", name: "Soothing sounds")]
-    
+    var copingModel = [General(image: "leaf", name: "Meditation"), General(image: "wind", name: "Yoga"), General(image: "lungs", name: "Breathing"), General(image: "headphones", name: "Soothing sounds")]
+    var copingSkillsModel: [String: [Video]] = [:]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar(title: "Coping")
         configureTableView()
+        retrieveSkills()
+        
+    }
+    
+    func retrieveSkills() {
+        let db = Firestore.firestore()
+        let doc = db.collection("coping").document("skills")
+        HUD.show(.progress)
+        doc.getDocument { (snapshot, error) in
+            if error != nil {
+                print("there was an error")
+                HUD.flash(.error)
+                return
+            }
+            if let snapshot = snapshot, let data = snapshot.data() {
+                for skill in data.keys {
+                    if let skillArray = data[skill] as? [[String: String]] {
+                        var array: [Video] = []
+                        for video in skillArray {
+                            let name = video["name"]
+                            let thumbnail = video["thumbnail"]
+                            let url = video["url"]
+                            array.append(Video(videoTitle: name, thumbnail: thumbnail, url: url))
+                        }
+                        self.copingSkillsModel[skill] = array
+                    }
+                }
+                
+            }
+            HUD.flash(.success)
+        }
     }
     
     func configureTableView() {
@@ -61,9 +95,12 @@ extension CopingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = CopingSkillsViewController()
-        nextVC.title = copingModel[indexPath.row].name ?? ""
-        navigationController?.pushViewController(nextVC, animated: true)
+        if let copingSkillModel = copingSkillsModel[copingModel[indexPath.row].name ?? ""] {
+            let nextVC = CopingSkillsViewController()
+            nextVC.title = copingModel[indexPath.row].name ?? ""
+            nextVC.videosModel = copingSkillModel
+            navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
     
 }

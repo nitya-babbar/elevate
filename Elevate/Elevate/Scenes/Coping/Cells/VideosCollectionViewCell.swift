@@ -11,8 +11,7 @@ protocol VideosCollectionViewDelegate {}
 
 class VideosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var picture: UIImage!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var bgView: UIView!
     
     var delegate: VideosCollectionViewDelegate?
         

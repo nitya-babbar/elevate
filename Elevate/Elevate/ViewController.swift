@@ -33,7 +33,18 @@ extension UIViewController {
     }
     
     @objc func emergencyCall() {
-        print("Call emergency number")
+        callNumber(phoneNumber: "8002738255")
+    }
+    
+    private func callNumber(phoneNumber:String) {
+
+      if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+
+        let application:UIApplication = UIApplication.shared
+        if (application.canOpenURL(phoneCallURL)) {
+            application.open(phoneCallURL, options: [:], completionHandler: nil)
+        }
+      }
     }
     
     @objc func sendMessage() {

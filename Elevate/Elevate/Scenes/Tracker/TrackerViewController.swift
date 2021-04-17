@@ -36,6 +36,7 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     var dates: [String: DayTrack] = [:]
     var selectedDate = Date()
     var shouldSelectNewOne = false
+    var auth = Auth.auth()
     var uid: String?
     
     fileprivate lazy var dateFormatter1: DateFormatter = {
@@ -49,6 +50,7 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         configureNavigationBar(title: "Tracker")
         calendar.allowsMultipleSelection = true
         checkUserTracker()
+        authListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +68,21 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             retrieveUserDayTrack()
         } else {
             //TODO: Add a send to login Logics
+        }
+    }
+    
+    func authListener() {
+        auth.addStateDidChangeListener { (auth, user) in
+            self.uid = user?.uid
+            if user?.uid != nil {
+                self.retrieveUserDayTrack()
+            } else {
+                self.dates = [:]
+                for date in self.calendar.selectedDates {
+                    self.calendar.deselect(date)
+                }
+                self.calendar.reloadData()
+            }
         }
     }
     
@@ -95,8 +112,10 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     
     func saveUserDayTrack(key: String, dayTrack: DayTrack) {
-        let db = Firestore.firestore()
-        db.document("users/\(uid ?? "")").collection("tracker").document(key).setData(["mood": dayTrack.mood.rawValue,"journal": dayTrack.journal ?? "", "sleep": dayTrack.sleep ?? ""])
+        if let uid = uid {
+            let db = Firestore.firestore()
+            db.document("users/\(uid)").collection("tracker").document(key).setData(["mood": dayTrack.mood.rawValue,"journal": dayTrack.journal ?? "", "sleep": dayTrack.sleep ?? ""])
+        }
     }
     
     func selectARetrievedDate(date: String) {
@@ -123,10 +142,6 @@ class TrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     }
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        if uid == nil {
-            showAlert(with: "Hey!", message: "You must sign in to use this feature")
-            return false
-        }
         goToDate(date)
         return false
     }

@@ -15,6 +15,7 @@ class GoalsViewController: UIViewController {
     @IBOutlet weak var longTermButton: UIButton!
     @IBOutlet weak var todayGoalsLabel: UILabel!
     @IBOutlet weak var todayGoalsTableView: UITableView!
+    var auth = Auth.auth()
     var uid: String?
     
     var dailyGoalsModel: [Goal] = [Goal(description: "", done: false), Goal(description: "", done: false), Goal(description: "", done: false)]
@@ -41,13 +42,26 @@ class GoalsViewController: UIViewController {
 //                dump(snapshot)
 //            }
 //        }
-        if let user = Auth.auth().currentUser {
+        if let user = auth.currentUser {
             uid = user.uid
-            HUD.show(.progress)
             retrieveGoals()
         }
-
+        authListener()
         configureNavigationBar(title: "Goals")
+    }
+    
+    func authListener() {
+        auth.addStateDidChangeListener { (auth, user) in
+            self.uid = user?.uid
+            if user?.uid != nil {
+                self.retrieveGoals()
+            } else {
+                self.dailyGoalsModel = [Goal(description: "", done: false), Goal(description: "", done: false), Goal(description: "", done: false)]
+                DispatchQueue.main.async {
+                    self.todayGoalsTableView.reloadData()
+                }
+            }
+        }
     }
     
     @IBAction func longTermsGoal(_ sender: UIButton) {
@@ -63,6 +77,7 @@ class GoalsViewController: UIViewController {
     }
     
     func retrieveGoals() {
+        HUD.show(.progress)
         let db = Firestore.firestore()
         let doc = db.document("users/\(uid ?? "")").collection("goals").document("dailyGoals")
         doc.getDocument { (snapshot, error) in
@@ -91,12 +106,17 @@ class GoalsViewController: UIViewController {
     }
     
     func saveGoals() {
-        let db = Firestore.firestore()
-        var array: [[String: Any]] = []
-        for dailyGoal in dailyGoalsModel {
-            array.append(["description": dailyGoal.description ?? "", "done": dailyGoal.done ?? false])
+        if let uid = uid {
+            let db = Firestore.firestore()
+            var array: [[String: Any]] = []
+            for dailyGoal in dailyGoalsModel {
+                array.append(["description": dailyGoal.description ?? "", "done": dailyGoal.done ?? false])
+            }
+            db.document("users/\(uid)").collection("goals").document("dailyGoals").setData(["dailyGoals": array])
+        } else {
+            showAlert(with: "Hey!", message: "You must be logged in to start adding your goals")
         }
-        db.document("users/\(uid ?? "")").collection("goals").document("dailyGoals").setData(["dailyGoals": array])
+        
     }
 
 }

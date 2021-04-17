@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CustomTextViewDelegate: class {
-    func customTextViewDidChange(_ textView: UITextView)
+    func customTextViewEndEditing(_ textView: UITextView)
 }
 
 @IBDesignable
@@ -36,11 +36,7 @@ class CustomTextView: UITextView, UITextViewDelegate {
         }
         
     }
-    func textViewDidChange(_ textView: UITextView) {
-        if self.text != placeholder && self.textColor != placeholderColor {
-            customDelegate?.customTextViewDidChange(textView)
-        }
-    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if self.text == placeholder && self.textColor == placeholderColor {
             self.text = nil
@@ -52,6 +48,8 @@ class CustomTextView: UITextView, UITextViewDelegate {
         if self.text.trimmingCharacters(in: .whitespaces).isEmpty {
             self.text = placeholder
             self.textColor = placeholderColor
+        } else {
+            customDelegate?.customTextViewEndEditing(textView)
         }
     }
     

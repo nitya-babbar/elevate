@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA4A394261E5DD10067FC3B /* Tracker */,
-				2EFE29A7261C021E00FE56AD /* About */,
+				2EFE29A7261C021E00FE56AD /* Settings */,
 				2EFE299F261BFE7600FE56AD /* SignIn */,
 				2EFE299C261BFE7600FE56AD /* SignUp */,
 				2EFE29272616C5DE00FE56AD /* Goals */,
@@ -241,13 +241,13 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
-		2EFE29A7261C021E00FE56AD /* About */ = {
+		2EFE29A7261C021E00FE56AD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				2EFE29A8261C023700FE56AD /* SettingsViewController.swift */,
 				2EFE29A9261C023700FE56AD /* SettingsViewController.xib */,
 			);
-			path = About;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		42356F4B2617A77C006AC759 /* Cells */ = {

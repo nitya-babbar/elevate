@@ -15,6 +15,7 @@ class LongTermGoalsViewController: UIViewController {
     @IBOutlet weak var longTermButton: UIButton!
     @IBOutlet weak var longTermGoalLabel: UILabel!
     @IBOutlet weak var longTermGoalTableView: UITableView!
+    var auth = Auth.auth()
     var uid: String?
 
     
@@ -29,6 +30,7 @@ class LongTermGoalsViewController: UIViewController {
             HUD.show(.progress)
             retrieveGoals()
         }
+        authListener()
     }
     // This function works to goback a presented viewController with modal option
 //    @IBAction func goback(sender: UIButton) {
@@ -36,6 +38,20 @@ class LongTermGoalsViewController: UIViewController {
 //        dismiss(animated: true, completion: nil)
 //
 //    }
+    
+    func authListener() {
+        auth.addStateDidChangeListener { (auth, user) in
+            self.uid = user?.uid
+            if user?.uid != nil {
+                self.retrieveGoals()
+            } else {
+                self.longTermGoalModel = [Goal(description: "", done: false), Goal(description: "", done: false), Goal(description: "", done: false), Goal(description: "", done: false), Goal(description: "", done: false)]
+                self.longTermGoalTableView.reloadData()
+            }
+        }
+    }
+    
+    
     func configureTableView() {
         longTermGoalTableView.delegate = self
         longTermGoalTableView.dataSource = self
@@ -70,12 +86,17 @@ class LongTermGoalsViewController: UIViewController {
     }
     
     func saveGoals() {
-        let db = Firestore.firestore()
-        var array: [[String: Any]] = []
-        for longTermGoal in longTermGoalModel {
-            array.append(["description": longTermGoal.description ?? "", "done": longTermGoal.done ?? false])
+        if let uid = uid {
+            let db = Firestore.firestore()
+            var array: [[String: Any]] = []
+            for longTermGoal in longTermGoalModel {
+                array.append(["description": longTermGoal.description ?? "", "done": longTermGoal.done ?? false])
+            }
+            db.document("users/\(uid)").collection("goals").document("longTermGoals").setData(["longTermGoals": array])
+        } else {
+            showAlert(with: "Hey!", message: "You must be logged in to start adding your goals")
         }
-        db.document("users/\(uid ?? "")").collection("goals").document("longTermGoals").setData(["longTermGoals": array])
+        
     }
 
 }

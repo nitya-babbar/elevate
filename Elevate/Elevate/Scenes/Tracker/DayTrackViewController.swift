@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum Mood: Int {
     case verySad, sad, normal, happy, veryHappy
@@ -33,13 +34,14 @@ protocol DayTrackDelegate: class {
 class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var smileyButtons: [UIButton]!
-    @IBOutlet weak var journalTextView: UITextView!
+    @IBOutlet weak var journalTextView: CustomTextView!
     @IBOutlet weak var picker: UITextField!
     let thePicker = UIPickerView()
     weak var delegate: DayTrackDelegate?
     var dayTrack: DayTrack!
     var selectedMood: Mood!
     let myPickerData = [String](arrayLiteral: "1 Hour", "2 Hours", "3 Hours", "4 Hours", "5 Hours", "6 Hours", "7 Hours", "8 Hours", "9 Hours", "10 Hours", "11 Hours", "12 Hours", "13 Hours", "14 Hours", "15 Hours", "16 Hours", "17 Hours", "18 Hours", "19 Hours", "20 Hours")
+    var uid: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +50,20 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if dayTrack != nil {
             smileyButtons[selectedMood.rawValue].isSelected = true
             smileyButtons[selectedMood.rawValue].tintColor = selectedMood.color()
-            journalTextView.text = dayTrack.journal ?? ""
+            if !(dayTrack.journal?.isEmpty ?? true) {
+                journalTextView.text = dayTrack.journal ?? ""
+                journalTextView.textColor = .black
+            }
             picker.text = dayTrack.sleep ?? ""
         }
         picker.inputView = thePicker
         thePicker.delegate = self
+        if let user = Auth.auth().currentUser {
+            uid = user.uid
+        } else {
+            journalTextView.delegate = self
+        }
+
     }
     
     func addCustomBack() {
@@ -67,7 +78,7 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             goBack()
             return
         }
-        let newDayTrack = DayTrack(mood: self.selectedMood, journal: self.journalTextView.text, sleep: self.picker.text)
+        let newDayTrack = DayTrack(mood: self.selectedMood, journal: self.journalTextView.text == self.journalTextView.placeholder ? "" : self.journalTextView.text, sleep: self.picker.text)
         if dayTrack != newDayTrack {
             let alert = UIAlertController(title: "Hey!", message: "Do you want to save your changes?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Save", style: .default) {_ in
@@ -90,25 +101,24 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     
     @IBAction func selectMood(_ sender: UIButton) {
-        selectedMood = Mood(rawValue: sender.tag) ?? .normal
-        moodColoring()
+        if uid != nil {
+            selectedMood = Mood(rawValue: sender.tag) ?? .normal
+            moodColoring()
+        } else {
+            showAlert(with: "Hey!", message: "You must be logged in to changin your Mood")
+        }
         
     }
     
     func moodColoring() {
-        
         for i in 0 ..< 5 {
-            
             if i == selectedMood.rawValue {
                 smileyButtons[i].isSelected = true
                 smileyButtons[i].tintColor = selectedMood.color()
             } else {
                 smileyButtons[i].isSelected = false
             }
-            
-            
         }
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -128,4 +138,13 @@ class DayTrackViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     var pickerData: [String] = [String]()
+}
+
+extension DayTrackViewController: UITextViewDelegate {
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        showAlert(with: "Hey!", message: "You must be logged in to start writing your journal")
+        return false
+    }
+    
 }

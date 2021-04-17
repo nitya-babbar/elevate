@@ -63,7 +63,7 @@ class GoalsTableViewCell: UITableViewCell {
 }
 
 extension GoalsTableViewCell: CustomTextViewDelegate {
-    func customTextViewDidChange(_ textView: UITextView) {
+    func customTextViewEndEditing(_ textView: UITextView) {
         if let index = index {
             if textView.text.isEmpty || textView.text == dailyTextView.placeholder {
                 checkButton.isSelected = false
